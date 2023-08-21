@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController(value = "authAPIofWeb")
 @RequestMapping("/api/v1/auth")
 public class AuthController {
-
     @Autowired
     private AuthService authService;
     @PostMapping("/signin")
@@ -24,6 +23,6 @@ public class AuthController {
     }
     @PostMapping("/signupuser")
     public ResponseEntity<?> signUpUser(@RequestBody SignupRequest signupRequest) {
-        return new ResponseEntity<>(  authService.signUpUser(signupRequest),HttpStatus.CREATED);
+        return new ResponseEntity<>(authService.signUpUser(signupRequest),HttpStatus.CREATED);
     }
 }
